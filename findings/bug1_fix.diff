@@ -1,0 +1,10 @@
+--- a/get_next_line.c
++++ b/get_next_line.c
+@@ -25,6 +25,7 @@
+ 	if (!stash || *stash == '\0')
+ 	{
+ 		free(stash);
++		stash = NULL;
+ 		return (NULL);
+ 	}
+ 	line = extract_line(stash);

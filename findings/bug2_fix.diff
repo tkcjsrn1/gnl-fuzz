@@ -1,0 +1,21 @@
+--- a/get_next_line.c
++++ b/get_next_line.c
+@@ -36,6 +36,7 @@
+ static char	*read_until_nl(int fd, char *stash)
+ {
+ 	char	*buf;
++	char	*temp;
+ 	ssize_t	rd;
+ 
+ 	buf = malloc(BUFFER_SIZE + 1);
+@@ -51,7 +52,9 @@
+ 			return (NULL);
+ 		}
+ 		buf[rd] = '\0';
+-		stash = ft_strjoin(stash, buf);
++		temp = ft_strjoin(stash, buf);
++		free(stash);
++		stash = temp;
+ 		if (!stash)
+ 		{
+ 			free(buf);

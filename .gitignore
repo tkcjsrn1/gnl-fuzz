@@ -1,0 +1,5 @@
+bin/
+corpus/
+crashes/
+afl_out/
+*.o
